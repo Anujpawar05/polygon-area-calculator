@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
     <header class="topbar">
         <a class="brand" href="#">Geo<span>Calc</span></a>
@@ -34,26 +35,48 @@
                 <select id="shape">
                     <option value="rectangle">Rectangle</option>
                     <option value="square">Square</option>
+                    <option value="circle">Circle</option>
+                    <option value="triangle">Triangle</option>
                 </select>
 
                 <div id="rectangleFields" class="field-grid">
                     <div>
                         <label for="width">Width</label>
-                        <input id="width" type="number" min="1"
-                               max="10000" step="1" value="10">
+                        <input id="width" type="number" min="1" max="10000" step="1" value="10">
                     </div>
                     <div>
                         <label for="height">Height</label>
-                        <input id="height" type="number" min="1"
-                               max="10000" step="1" value="5">
+                        <input id="height" type="number" min="1" max="10000" step="1" value="5">
                     </div>
                 </div>
 
                 <div id="squareFields" class="hidden">
                     <label for="side">Side length</label>
-                    <input id="side" type="number" min="1"
-                           max="10000" step="1" value="5">
+                    <input id="side" type="number" min="1" max="10000" step="1" value="5">
                 </div>
+
+
+                <div id="circleFields" class="hidden">
+                    <label for="radius">Radius</label>
+                    <input id="radius" type="number" min="1" max="10000" step="any" value="5">
+                </div>
+
+                <div id="triangleFields" class="hidden">
+                    <div class="field-grid">
+                        <div>
+                            <label for="sideA">Side A</label>
+                            <input id="sideA" type="number" min="1" max="10000" step="any" value="5">
+                        </div>
+                        <div>
+                            <label for="sideB">Side B</label>
+                            <input id="sideB" type="number" min="1" max="10000" step="any" value="5">
+                        </div>
+                    </div>
+                    <label for="sideC">Side C</label>
+                    <input id="sideC" type="number" min="1" max="10000" step="any" value="6">
+                    <p class="muted">The three sides must form a valid triangle.</p>
+                </div>
+
 
                 <button id="calculate" class="primary-btn">
                     Calculate properties <span>→</span>
@@ -137,20 +160,17 @@
                 <div id="innerRectangleFields" class="field-grid hidden">
                     <div>
                         <label for="innerWidth">Inner width</label>
-                        <input id="innerWidth" type="number" min="1"
-                               max="10000" step="1" value="3">
+                        <input id="innerWidth" type="number" min="1" max="10000" step="1" value="3">
                     </div>
                     <div>
                         <label for="innerHeight">Inner height</label>
-                        <input id="innerHeight" type="number" min="1"
-                               max="10000" step="1" value="2">
+                        <input id="innerHeight" type="number" min="1" max="10000" step="1" value="2">
                     </div>
                 </div>
 
                 <div id="innerSquareFields">
                     <label for="innerSide">Inner side</label>
-                    <input id="innerSide" type="number" min="1"
-                           max="10000" step="1" value="2">
+                    <input id="innerSide" type="number" min="1" max="10000" step="1" value="2">
                 </div>
 
                 <button id="fitCalculate" class="secondary-btn">
@@ -168,4 +188,5 @@
         </footer>
     </main>
 </body>
+
 </html>

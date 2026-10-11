@@ -1,4 +1,3 @@
-
 :root {
     font-family: Inter, "Segoe UI", Arial, sans-serif;
     color: #f2f5ff;
@@ -332,6 +331,7 @@ footer {
 }
 
 @media (max-width: 760px) {
+
     .workspace,
     .bottom-grid {
         grid-template-columns: 1fr;
@@ -382,16 +382,12 @@ html {
 
 body {
     background:
-        radial-gradient(
-            circle at 10% 15%,
+        radial-gradient(circle at 10% 15%,
             rgba(139, 124, 255, 0.12),
-            transparent 32rem
-        ),
-        radial-gradient(
-            circle at 90% 45%,
+            transparent 32rem),
+        radial-gradient(circle at 90% 45%,
             rgba(83, 223, 208, 0.07),
-            transparent 28rem
-        ),
+            transparent 28rem),
         #0b1020;
     background-attachment: fixed;
 }
@@ -484,11 +480,9 @@ select:hover {
 .shape-drawing {
     border-radius: 6px;
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             rgba(83, 223, 208, 0.2),
-            rgba(139, 124, 255, 0.38)
-        );
+            rgba(139, 124, 255, 0.38));
     box-shadow:
         0 0 24px rgba(83, 223, 208, 0.12),
         inset 0 0 24px rgba(139, 124, 255, 0.08);
@@ -556,6 +550,7 @@ select:focus-visible {
 
 /* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -592,4 +587,19 @@ select:focus-visible {
     button {
         font-size: 16px;
     }
+}
+
+/* Circle and triangle previews */
+
+.shape-drawing.circle-preview {
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.shape-drawing.triangle-preview {
+    border: none;
+    border-radius: 0;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background: linear-gradient(135deg, #53dfd0, #8b7cff);
+    box-shadow: none;
 }
