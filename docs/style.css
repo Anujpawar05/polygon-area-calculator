@@ -372,3 +372,224 @@ footer {
         padding: 18px 16px;
     }
 }
+
+
+/* ===== Portfolio Design Upgrade ===== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(139, 124, 255, 0.12),
+            transparent 32rem
+        ),
+        radial-gradient(
+            circle at 90% 45%,
+            rgba(83, 223, 208, 0.07),
+            transparent 28rem
+        ),
+        #0b1020;
+    background-attachment: fixed;
+}
+
+::selection {
+    background: #8b7cff;
+    color: #ffffff;
+}
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(11, 16, 32, 0.85);
+    backdrop-filter: blur(16px);
+}
+
+.brand {
+    transition: letter-spacing 0.25s ease;
+}
+
+.brand:hover {
+    letter-spacing: 0.5px;
+}
+
+.hero {
+    animation: fade-up 0.65s ease both;
+}
+
+.hero h1 {
+    line-height: 1.12;
+}
+
+.panel,
+.result-card {
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+    transition:
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.panel:hover,
+.result-card:hover {
+    border-color: #465478;
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.2);
+}
+
+.result-card:hover {
+    transform: translateY(-4px);
+}
+
+.primary-btn,
+.secondary-btn {
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+.primary-btn:hover {
+    box-shadow: 0 8px 24px rgba(139, 124, 255, 0.25);
+    filter: brightness(1.08);
+}
+
+.secondary-btn:hover {
+    box-shadow: 0 8px 24px rgba(83, 223, 208, 0.1);
+}
+
+.primary-btn:active,
+.secondary-btn:active {
+    transform: scale(0.985);
+}
+
+input,
+select {
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+input:hover,
+select:hover {
+    border-color: #465478;
+}
+
+.shape-drawing {
+    border-radius: 6px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(83, 223, 208, 0.2),
+            rgba(139, 124, 255, 0.38)
+        );
+    box-shadow:
+        0 0 24px rgba(83, 223, 208, 0.12),
+        inset 0 0 24px rgba(139, 124, 255, 0.08);
+    animation: shape-appear 0.35s ease both;
+}
+
+.badge {
+    white-space: nowrap;
+}
+
+.picture {
+    max-height: 300px;
+    scrollbar-width: thin;
+    scrollbar-color: #465478 #0a1223;
+}
+
+.error:not(:empty) {
+    padding: 10px 12px;
+    border: 1px solid rgba(255, 157, 167, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 100, 120, 0.07);
+}
+
+.fit-result {
+    border: 1px solid var(--border);
+}
+
+footer {
+    border-top: 1px solid #202941;
+    margin-top: 42px;
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shape-appear {
+    from {
+        opacity: 0.5;
+        transform: scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Visible keyboard focus */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 3px;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 20px 0 30px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .panel {
+        padding: 18px;
+    }
+
+    .dimensions {
+        flex-wrap: wrap;
+    }
+
+    .status {
+        font-size: 0.72rem;
+    }
+
+    input,
+    select,
+    button {
+        font-size: 16px;
+    }
+}
