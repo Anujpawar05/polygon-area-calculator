@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1020">
+    <title>Polygon Area Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="#">Geo<span>Calc</span></a>
+        <span class="status"><span class="dot"></span> Ready to calculate</span>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <p class="eyebrow">GEOMETRY MADE SIMPLE</p>
+            <h1>Polygon Area <span>Calculator</span></h1>
+            <p class="subtitle">
+                Explore dimensions, calculate geometric properties,
+                and visualize your shapes.
+            </p>
+        </section>
+
+        <section class="workspace">
+            <div class="panel controls">
+                <h2>Shape settings</h2>
+                <p class="muted">Choose a shape and enter its dimensions.</p>
+
+                <label for="shape">Shape type</label>
+                <select id="shape">
+                    <option value="rectangle">Rectangle</option>
+                    <option value="square">Square</option>
+                </select>
+
+                <div id="rectangleFields" class="field-grid">
+                    <div>
+                        <label for="width">Width</label>
+                        <input id="width" type="number" min="1"
+                               max="10000" step="1" value="10">
+                    </div>
+                    <div>
+                        <label for="height">Height</label>
+                        <input id="height" type="number" min="1"
+                               max="10000" step="1" value="5">
+                    </div>
+                </div>
+
+                <div id="squareFields" class="hidden">
+                    <label for="side">Side length</label>
+                    <input id="side" type="number" min="1"
+                           max="10000" step="1" value="5">
+                </div>
+
+                <button id="calculate" class="primary-btn">
+                    Calculate properties <span>→</span>
+                </button>
+
+                <p id="error" class="error" role="alert" aria-live="polite"></p>
+            </div>
+
+            <div class="panel visualization">
+                <div class="section-heading">
+                    <div>
+                        <h2>Shape preview</h2>
+                        <p class="muted">Proportional visual representation</p>
+                    </div>
+                    <span id="shapeBadge" class="badge">Rectangle</span>
+                </div>
+
+                <div class="canvas">
+                    <div id="shapeDrawing" class="shape-drawing"></div>
+                </div>
+
+                <div class="dimensions">
+                    <span id="widthLabel">Width: 10</span>
+                    <span id="heightLabel">Height: 5</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR RESULTS</p>
+                    <h2>Calculated properties</h2>
+                </div>
+            </div>
+
+            <div class="result-grid">
+                <article class="result-card">
+                    <span class="result-icon">▦</span>
+                    <p>Area</p>
+                    <strong id="area">50</strong>
+                    <small>Square units</small>
+                </article>
+
+                <article class="result-card">
+                    <span class="result-icon">↔</span>
+                    <p>Perimeter</p>
+                    <strong id="perimeter">30</strong>
+                    <small>Linear units</small>
+                </article>
+
+                <article class="result-card">
+                    <span class="result-icon">⟋</span>
+                    <p>Diagonal</p>
+                    <strong id="diagonal">11.18</strong>
+                    <small>Linear units</small>
+                </article>
+            </div>
+        </section>
+
+        <section class="bottom-grid">
+            <div class="panel">
+                <h2>Star picture</h2>
+                <p class="muted">An ASCII representation of your shape.</p>
+                <pre id="picture" class="picture"></pre>
+            </div>
+
+            <div class="panel">
+                <h2>Shape fitting calculator</h2>
+                <p class="muted">
+                    How many smaller shapes fit inside the current shape
+                    without rotation?
+                </p>
+
+                <label for="innerShape">Inner shape</label>
+                <select id="innerShape">
+                    <option value="square">Square</option>
+                    <option value="rectangle">Rectangle</option>
+                </select>
+
+                <div id="innerRectangleFields" class="field-grid hidden">
+                    <div>
+                        <label for="innerWidth">Inner width</label>
+                        <input id="innerWidth" type="number" min="1"
+                               max="10000" step="1" value="3">
+                    </div>
+                    <div>
+                        <label for="innerHeight">Inner height</label>
+                        <input id="innerHeight" type="number" min="1"
+                               max="10000" step="1" value="2">
+                    </div>
+                </div>
+
+                <div id="innerSquareFields">
+                    <label for="innerSide">Inner side</label>
+                    <input id="innerSide" type="number" min="1"
+                           max="10000" step="1" value="2">
+                </div>
+
+                <button id="fitCalculate" class="secondary-btn">
+                    Calculate fitting
+                </button>
+                <p class="fit-result" aria-live="polite">
+                    Shapes that fit: <strong id="fitCount">10</strong>
+                </p>
+            </div>
+        </section>
+
+        <footer>
+            <p>GeoCalc · Built with HTML, CSS & JavaScript</p>
+            <p>Inspired by Object-Oriented Programming in Python</p>
+        </footer>
+    </main>
+</body>
+</html>
